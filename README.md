@@ -2,7 +2,7 @@
 Download all media from a website
 
 ## Requierments
-* BeautifulSoup4\
+* BeautifulSoup4
 * Requests
 
 ## Usage
