@@ -6,4 +6,4 @@ Download all media from a website
 * Requests
 
 ## Usage
-> python scrapper.py -u https://yourwebsite.com -e png,jpeg,svg -o outputDirectory
+> python scraper.py -u https://yourwebsite.com -e png,jpeg,svg -o outputDirectory
