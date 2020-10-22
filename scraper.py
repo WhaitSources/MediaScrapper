@@ -61,15 +61,11 @@ def scraper(url, ext, out):
 
     i = 0
     for media in medias_link:
+		url = url + '/' if url[-1] != '/' else url 
         try:
-            r_media = requests.get(media)
+            r_media = requests.get(url + media)
         except:
-            if url[-1] != '/':
-                url = url + '/'
-            try:
-                r_media = requests.get(url + media)
-            except:
-                pass
+            break
         localMediaPath = out + '/' + str(i) + '_' + media.split('/')[-1]
         print("[*] Downloading " + media + "...")
         file = open(localMediaPath, "wb")
