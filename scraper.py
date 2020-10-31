@@ -5,7 +5,7 @@ import requests
 from bs4 import BeautifulSoup
 
 def usage():
-    print(sys.argv[0] + " -u http://exemple.com -e png,mp4 -o")
+    print("\n\tUsage : " + sys.argv[0] + " -u http://exemple.com -e png,mp4 -o")
     
 def main():
     try:
@@ -25,9 +25,9 @@ def main():
             ext = a.split(',')
         elif o in ("-o", "--output"):
             outDir = a
-        elif url == "" or ext == [] or outDir == "":
-            usage()
-            sys.exit()
+    if url == "" or ext == [] or outDir == "":
+        usage()
+        sys.exit()
     
 
     print("\n=> Checking url : " + url)
@@ -61,7 +61,7 @@ def scraper(url, ext, out):
 
     i = 0
     for media in medias_link:
-		url = url + '/' if url[-1] != '/' else url 
+        url = url + '/' if url[-1] != '/' else url 
         try:
             r_media = requests.get(url + media)
         except:
